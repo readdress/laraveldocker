@@ -14,8 +14,8 @@ phases:
             # - composer install --no-progress --no-suggest
             # - echo node modules are Installing
             # - npm install && npm run dev
-            # - cp .env.example .env
-            # - php artisan key:generate
+            - cp .env.example .env
+            - php artisan key:generate
             # - ./vendor/bin/phpunit
             - echo Logging in to Amazon ECR...
             - aws --version
