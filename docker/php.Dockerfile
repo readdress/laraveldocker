@@ -28,15 +28,15 @@ RUN apk add autoconf \
     && docker-php-ext-enable redis \
     && apk del autoconf
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-RUN mkdir -p /home/$user/.composer && chown -R $user:$user /home/$user
+# COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# RUN mkdir -p /home/$user/.composer && chown -R $user:$user /home/$user
 
 COPY ./docker/php.ini /usr/local/etc/php/conf.d/local.ini 
 COPY --chown=$user:$user . /var/www
-COPY --chown=$user:$user ./.env /var/www/.env
+# COPY --chown=$user:$user ./.env /var/www/.env
 
-RUN composer install
-RUN rm /usr/bin/composer
+# RUN composer install
+# RUN rm /usr/bin/composer
 
 USER $user
 
