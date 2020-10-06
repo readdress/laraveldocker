@@ -43,5 +43,5 @@ phases:
             - docker push $REPOSITORY_URI_LARAVEL_SERVER:latest
             - docker push $REPOSITORY_URI_LARAVEL_SERVER:$IMAGE_TAG
             - printf '[{"name":"laravelapp","imageUri":"%s"},{"name":"laravelserver","imageUri":"%s"}]' $REPOSITORY_URI_LARAVEL:$IMAGE_TAG $REPOSITORY_URI_LARAVEL_SERVER:$IMAGE_TAG > imagedefinitions.json
-    artifacts:
-        files: imagedefinitions.json
+artifacts:
+    files: imagedefinitions.json
